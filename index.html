@@ -68,51 +68,54 @@ h1 {
 .keyboard {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.35rem;
     width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .keyboard-row {
     display: flex;
     justify-content: center;
-    gap: 0.4rem;
-    flex-wrap: wrap; /* makes rows wrap on small screens */
+    gap: 0.35rem;
 }
 
 .key {
     background-color: #d3d6da;
-    border-radius: 0.4rem;
-    padding: 0.6rem;
+    border-radius: 0.25rem;
+    padding: 0.75rem 0;
     font-size: clamp(0.9rem, 3vw, 1.1rem);
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
-    flex-grow: 1;
-    flex-basis: 2rem;
-    min-width: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex: 1;
+    max-width: 9%; /* keeps keys consistent size */
+    text-align: center;
     transition: background-color 0.2s;
 }
 
 .key.large {
-    flex-basis: 3rem;
+    flex: 1.5;       /* wider Enter/Backspace */
+    max-width: none; /* allow stretch */
 }
 
-        }
-        .key.correct {
-            background-color: #6aaa64;
-            color: white;
-        }
-        .key.present {
-            background-color: #c9b458;
-            color: white;
-        }
-        .key.absent {
-            background-color: #787c7e;
-            color: white;
-        }
+.key:active {
+    transform: scale(0.95);
+}
+
+/* Color states */
+.key.correct {
+    background-color: #6aaa64;
+    color: white;
+}
+.key.present {
+    background-color: #c9b458;
+    color: white;
+}
+.key.absent {
+    background-color: #787c7e;
+    color: white;
+}
         #message-box {
             position: fixed;
             top: 1rem;
